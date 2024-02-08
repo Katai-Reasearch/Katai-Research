@@ -40,7 +40,7 @@ header {
 }
 
 .nav-links {
-  display: flex;
+  display: flex; /* Show the navigation links on both desktop and mobile devices */
   list-style: none;
   margin: 0;
   padding: 0;
@@ -83,7 +83,7 @@ header {
 }
 
 .hero-content h1 {
-  font-size: 4rem;
+  font-size: 3rem; /* Reduced font size for smaller screens */
   line-height: 1.2;
   font-weight: bold;
   margin-bottom: 2rem;
@@ -162,23 +162,7 @@ header {
   margin-bottom: 1rem;
 }
 
-/* Media Queries */
-
-/* Medium Devices, Desktops */
-@media only screen and (min-width: 768px) {
-  .hero-content h1 {
-    font-size: 5rem;
-  }
-}
-
-/* Large Devices, Wide Screens */
-@media only screen and (min-width: 992px) {
-  .hero-section {
-    height: 600px;
-  }
-}
-
-/* Small Devices, Phones */
+/* Mobile Styles */
 @media only screen and (max-width: 767px) {
   .banner {
     flex-direction: column;
@@ -189,6 +173,7 @@ header {
   }
 
   .nav-links {
+    display: flex; /* Show the navigation links on smaller screens */
     flex-direction: column;
     align-items: center;
     margin-top: 1rem;
@@ -207,6 +192,10 @@ header {
     top: 30%;
   }
 
+  .hero-content h1 {
+    font-size: 2rem; /* Further reduced font size for smaller screens */
+  }
+
   .services-section {
     margin-bottom: 2rem;
   }
@@ -218,5 +207,72 @@ header {
   .service-card {
     width: 100%;
     margin: 1rem 0;
+  }
+}
+
+/* Mobile Navigation Menu */
+.mobile-menu {
+  display: none; /* Hide the mobile menu by default */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+.mobile-menu-btn {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  margin-right: 1rem;
+}
+
+.mobile-menu-btn img {
+  width: 20px;
+  height: 20px;
+  margin-left: 1rem;
+}
+
+.mobile-menu-btn span {
+  font-size: 1.2rem;
+  margin-left: 0.5rem;
+}
+
+.mobile-menu-btn:hover {
+  cursor: pointer;
+}
+
+.mobile-menu-btn.active img {
+  transform: rotate(180deg);
+}
+
+.mobile-menu-links {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.mobile-menu-link {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.mobile-menu-link:hover {
+  color: #0070f3;
+}
+
+/* Show the mobile menu on smaller screens */
+@media only screen and (max-width: 767px) {
+  .mobile-menu {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
   }
 }
